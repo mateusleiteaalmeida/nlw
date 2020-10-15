@@ -6,13 +6,14 @@ const options = {
     zoomControl: false
 }
 
-//create map
+// create map
 const map = L.map('mapid', options).setView([-27.222633,-49.6455874], 15);
 
-//create and add tileLayer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+// create and add tileLayer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+.addTo(map);
 
-//create icon
+// create icon
 const icon = L.icon({
     iconUrl: "./public/images/map-marker.svg",
     iconSize: [58, 68],
@@ -21,7 +22,7 @@ const icon = L.icon({
 })
 
 
-//create and add marker
+// create and add marker
 L.marker([-27.222633,-49.6455874], { icon })
 .addTo(map)
 
@@ -30,7 +31,7 @@ L.marker([-27.222633,-49.6455874], { icon })
 function selectImage(event){
     const button = event.currentTarget
 
-    //remover todas as classes .active
+    // remover todas as classes .active
     const buttons = document.querySelectorAll(".images button")
     buttons.forEach(removeActiveClass)
 
@@ -38,13 +39,13 @@ function selectImage(event){
         button.classList.remove("active")
     }
 
-    //selecionar a imagem clicada
+    // selecionar a imagem clicada
     const image = button.children[0]
     const imageContainer = document.querySelector(".orphanage-details > img")
 
-    //atualizar o container image
+    // atualizar o container image
     imageContainer.src = image.src
 
-    //adicionar a classe .active para este botão
+    // adicionar a classe .active para este botão
     button.classList.add('active')
 }
