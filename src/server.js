@@ -1,13 +1,24 @@
 // import lib
 const express = require('express');
+const path = require('path');
+
+const pages = require('./pages.js');
 
 // initiate express
-const server = express ()
+const server = express();
+
+server
+  //using statiic files
+  .use(express.static('public'))
+  // configure template engine
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'hbs');
 
 // create path
-server.get('/', (request, response) => {
-    return response.sendFile('Oi direto do back-end')
-})
+server.get('/', pages.index);
+server.get('/orphanage', pages.orphanage);
+server.get('/orphanages', pages.orphanages);
+server.get('/create-orphanage', pages.createOrphanage);
 
 // turn server on
-server.listen(5500)
+server.listen(5500);
