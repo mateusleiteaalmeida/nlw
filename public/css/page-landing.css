@@ -31,7 +31,6 @@ main h1 {
     font-size: clamp(4rem, 8vw, 8.4rem);
 }
 
-
 .visit p {
     animation-delay: 200ms;
 }
