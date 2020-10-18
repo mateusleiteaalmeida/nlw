@@ -21,7 +21,7 @@ function saveOrphanage(db, orphanage) {
           "${orphanage.opening_hours}",
           "${orphanage.open_on_weekends}"
       );  
-    `);
+`);
 }
 
 module.exports = saveOrphanage;
