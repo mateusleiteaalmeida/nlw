@@ -76,16 +76,21 @@ function toggleSelect(event) {
   // remove the .active class from the buttons
   document.querySelectorAll('.button-select button')
   .forEach(function (button) {
-    button.classList.remove('active')
+    button.classList.remove('active');
   })
 
   // add .active class to the clicked button
-  const button = event.currentTarget
-  button.classList.add('active')
+  const button = event.currentTarget;
+  button.classList.add('active');
 
   // update input hidden with the selected value
-  const input = document.querySelector('[name="open_on_weekends"]')
+  const input = document.querySelector('[name="open_on_weekends"]');
 
   // check if it is yes or no
-  input.value = button.dataset.value
+  input.value = button.dataset.value;
+}
+
+function validade(event) {
+  // validate if lat and lng are filled
+  // event.preventDefault()
 }

@@ -11,16 +11,16 @@ const icon = L.icon({
     iconSize: [58, 68],
     iconAnchor: [29, 68],
     popupAnchor: [170, 2]
-})
+});
 
 // create and add marker
-function addMarker({id, name, lat, lng } = orphanage) {
+function addMarker({ id, name, lat, lng } = orphanage) {
     const popup = L.popup({
         closeButton: false,
         className: "map-popup",
         minWidth: 240,
         minHeight: 240
-    }).setContent(`${name} <a href="/orphanage?id=${id}"> <img src="/images/arrow-white.svg"> </a>`)
+    }).setContent(`${name} <a href="/orphanage?id=${id}"> <img src="/images/arrow-white.svg"> </a>`);
     
     L
     .marker([lat, lng], { icon })
@@ -39,4 +39,5 @@ orphanagesSpan.forEach( span => {
     }
 
     addMarker(orphanage)
-})
+});
+

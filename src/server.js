@@ -8,6 +8,8 @@ const pages = require('./pages.js');
 const server = express();
 
 server
+  // use body from req
+  .use(express.urlencoded({ extended: true }))
   //using statiic files
   .use(express.static('public'))
   // configure template engine
@@ -19,6 +21,7 @@ server.get('/', pages.index);
 server.get('/orphanage', pages.orphanage);
 server.get('/orphanages', pages.orphanages);
 server.get('/create-orphanage', pages.createOrphanage);
+server.post('/save-orphanage', pages.saveOrphanage)
 
 // turn server on
 server.listen(5500);
